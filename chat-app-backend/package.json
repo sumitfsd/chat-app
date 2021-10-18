@@ -1,7 +1,7 @@
 {
-  "name": "chatappp",
+  "name": "chat-app-backend",
   "version": "1.0.0",
-  "description": "Simple chat app",
+  "description": "Backend connection",
   "main": "server.js",
   "scripts": {
     "start": "node server",

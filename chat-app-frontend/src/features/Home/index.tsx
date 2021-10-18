@@ -1,43 +1,43 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import "./assets/home.css";
+import "./assets/home.scss";
 
 interface propsData {
     socket: any
 }
 
-const Homepage = (props: propsData) => {
-    const [username, setusername] = useState("");
-    const [roomname, setroomname] = useState("");
+const Home = (props: propsData) => {
+    const [userName, setuserName] = useState("");
+    const [roomName, setroomName] = useState("");
 
-    const sendData = () => {
-        if (username !== "" && roomname !== "") {
-            props.socket.emit("joinRoom", { username, roomname });
+    const joinRoomHandler = () => {
+        if (userName !== "" && roomName !== "") {
+            props.socket.emit("joinRoom", { userName, roomName });
         } else {
-            alert("username and roomname are must !");
+            alert("username and roomname are require");
             window.location.reload();
         }
     };
 
     return (
         <div className="homepage">
-            <h1>Welcome to ChatApp</h1>
+            <h1>Please enter Username or Room Name</h1>
             <input
                 placeholder="Input your user name"
-                value={username}
-                onChange={(e) => setusername(e.target.value)}
+                value={userName}
+                onChange={(e) => setuserName(e.target.value)}
             ></input>
             <input
                 placeholder="Input the room name"
-                value={roomname}
-                onChange={(e) => setroomname(e.target.value)}
+                value={roomName}
+                onChange={(e) => setroomName(e.target.value)}
             ></input>
-            <Link to={`/chat/${roomname}/${username}`}>
-                <button onClick={sendData}>Join</button>
+            <Link to={`/chat/${roomName}/${userName}`}>
+                <button onClick={joinRoomHandler}>Join</button>
             </Link>
         </div>
     );
 }
 
-export default Homepage;
+export default Home;

@@ -13,15 +13,12 @@ app.use(cors());
 
 var server = app.listen(
   port,
-  console.log(
-    `Server is running on the port no: ${(port)} `
-      .green
-  )
+  console.log(`Server is running on the port no: ${port} `.green)
 );
 
 const io = socket(server);
 
-//initializing the socket io connection 
+//initializing the socket io connection
 io.on("connection", (socket) => {
   //for a new user joining the room
   socket.on("joinRoom", ({ username, roomname }) => {

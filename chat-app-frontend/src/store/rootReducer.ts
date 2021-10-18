@@ -1,7 +1,8 @@
-// import { ProcessReducer } from "./process";
 import { combineReducers } from "redux";
+import { ChatBoxReducer } from "../features/ChatBox/ChatBoxReducers";
+
 const rootReducers = combineReducers({
-  //   ProcessReducer: ProcessReducer,
+  ChatBoxReducer,
 });
 
 export default rootReducers;

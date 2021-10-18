@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import io from "socket.io-client";
 import Home from './features/Home'
 import ChatBox from './features/ChatBox'
@@ -10,17 +10,11 @@ const socket = io.connect("/");
 
 const App = () => {
   return (
-    <div className="App">
-      <Router>
-        <div className='App'>
-          <Switch>
-            <Route path='/' exact>
-              <Home socket={socket} />
-            </Route>
-            <Route path='/chat/:roomname/:username' component={ChatBox} />
-          </Switch>
-        </div>
-      </Router>
+    <div className='App'>
+      <Switch>
+        <Route path='/' exact render={props => <Home socket={socket} />} />
+        <Route path='/chat/:roomname/:username' render={(props) => <ChatBox socket={socket} userName={props.match.params.username} roomName={props.match.params.roomname} />} />
+      </Switch>
     </div>
   );
 }

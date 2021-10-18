@@ -1,10 +1,22 @@
 import React from 'react';
+import Chat from './components/Chat'
 
-const ChatBox = () => {
+interface propsData {
+  socket: any;
+  userName: string;
+  roomName: string;
+}
+
+const ChatBox = (props: propsData) => {
+  const { socket, userName, roomName } = props
   return (
-    <React.Fragment>
-
-    </React.Fragment>
+    <div className='right'>
+      <Chat
+        username={userName}
+        roomname={roomName}
+        socket={socket}
+      />
+    </div>
   );
 }
 
