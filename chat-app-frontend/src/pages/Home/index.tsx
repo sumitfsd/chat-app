@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Header from '../Header';
+import Header from '../../components/Header';
 import history from '../../utils/history';
 import staticText from '../../constants/messages.json';
 

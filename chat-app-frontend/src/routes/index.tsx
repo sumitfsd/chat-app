@@ -1,8 +1,8 @@
 import { Switch, Route } from 'react-router-dom';
 import io from 'socket.io-client';
-import Home from './Home';
-import Weather from './Weather';
-import ChatBox from './ChatBox';
+import Home from '../pages/Home';
+import Weather from '../pages/Weather';
+import ChatBox from '../pages/ChatBox';
 import { HOME, CHAT, WEATHER } from '../constants/urls';
 
 // @ts-ignore
