@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Header from '../Header';
 import history from '../../utils/history';
-import staticText from '../../constants/messages.json'
+import staticText from '../../constants/messages.json';
 
 import './assets/home.scss';
 
@@ -16,7 +16,10 @@ const Home = (props: propsData) => {
 
   const joinRoomHandler = () => {
     if (userName !== '' && roomName !== '') {
-      props.socket.emit(staticText.join_room, { username: userName, roomname: roomName });
+      props.socket.emit(staticText.join_room, {
+        username: userName,
+        roomname: roomName,
+      });
       history.push(`/chat/${roomName}/${userName}`);
     } else {
       alert(staticText.user_and_room_require);

@@ -1,8 +1,9 @@
 import { Switch, Route } from 'react-router-dom';
 import io from 'socket.io-client';
 import Home from './Home';
+import Weather from './Weather';
 import ChatBox from './ChatBox';
-import { HOME, CHAT } from '../constants/urls';
+import { HOME, CHAT, WEATHER } from '../constants/urls';
 
 // @ts-ignore
 const socket = io.connect('/');
@@ -21,6 +22,7 @@ const Routes = () => {
           />
         )}
       />
+      <Route path={WEATHER} exact={true} component={Weather} />
     </Switch>
   );
 };

@@ -2,13 +2,13 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-User can chat here and chek the wheather
+User can chat here and chek the weather
 
 ## Features
 
 - Create Room
 - Chat in group
-- Check the wheather
+- Check the weather
 
 ## Tech
 

@@ -1,3 +1,6 @@
+import history from '../../utils/history';
+import { WEATHER } from '../../constants/urls';
+
 import './assets/header.scss';
 
 const Header = () => {
@@ -8,7 +11,7 @@ const Header = () => {
           <h1>Chat App</h1>
         </div>
         <div className="headerText">
-          <h1>Weather</h1>
+          <h1 onClick={() => history.push(WEATHER)}>Weather</h1>
         </div>
       </div>
     </header>

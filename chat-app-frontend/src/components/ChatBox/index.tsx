@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 import { to_Decrypt, to_Encrypt } from '../../aes.js';
-import staticText from '../../constants/messages.json'
+import staticText from '../../constants/messages.json';
 import './assets/chat.scss';
 
 interface propsData {
@@ -50,9 +50,7 @@ const Chat = (props: propsData) => {
   return (
     <div className="chat">
       <div className="user-name">
-        <h2>
-          {roomname}
-        </h2>
+        <h2>{roomname}</h2>
       </div>
       <div className="chat-message">
         {messages.map((i: any) => {
