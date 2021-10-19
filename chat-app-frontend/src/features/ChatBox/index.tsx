@@ -10,12 +10,15 @@ interface propsData {
 const ChatBox = (props: propsData) => {
   const { socket, userName, roomName } = props
   return (
-    <div className='right'>
-      <Chat
-        username={userName}
-        roomname={roomName}
-        socket={socket}
-      />
+    <div className="chatBox">
+      <div className="left"></div>
+      <div className='right'>
+        <Chat
+          username={userName}
+          roomname={roomName}
+          socket={socket}
+        />
+      </div>
     </div>
   );
 }
