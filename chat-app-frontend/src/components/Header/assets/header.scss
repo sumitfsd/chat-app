@@ -1,0 +1,79 @@
+.header {
+  background-color: #132c52;
+}
+.headerContainer {
+  padding: 0 2.3rem;
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  justify-content: space-between;
+}
+.headerLogo {
+  h1 {
+    color: #fff;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+}
+.headerText {
+  h1 {
+    cursor: pointer;
+  }
+}
+.headerInput {
+  width: 50%;
+  position: relative;
+}
+.headerOption {
+  width: 30%;
+  justify-content: space-between;
+}
+.headerButtonBox {
+  padding-left: 5rem;
+  width: 50%;
+}
+.headerOption {
+  display: flex;
+  align-items: center;
+}
+li.headerListItem {
+  width: 5rem;
+  text-align: center;
+  color: #777777;
+}
+.headerInputField {
+  width: 100%;
+  padding: 1rem 2rem;
+  border: 1px solid #eeeeee;
+  outline: none;
+  border-radius: 1px;
+}
+.headerButton {
+  background: #ec6661;
+  border: none;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.userList {
+  display: flex;
+  list-style: none;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerIcon {
+  width: 2rem;
+  color: #777777;
+  height: 2rem;
+}
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 2rem;
+  transform: translate(-50%, -37%);
+  color: #ddd;
+}

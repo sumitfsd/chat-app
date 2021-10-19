@@ -1,0 +1,143 @@
+@import '../../../global';
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 50%)
+) {
+  //style for Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+    border-radius: 10px;
+  }
+
+  //style for Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+.chatBox {
+  display: flex;
+  .right {
+    flex-basis: 100%;
+  }
+}
+
+.chat {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #2d343e;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  .user-name {
+    text-align: start;
+    width: 100%;
+    h2 {
+      font-weight: 300;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+      text-transform: capitalize;
+    }
+  }
+  .chat-message {
+    height: 70%;
+    @include scrollbars(5px, $backgroundColor, $yellowColor);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-content: flex-start;
+
+    .message {
+      margin-left: 0px;
+      width: 20%;
+      padding-left: 0.5rem;
+      display: flex;
+      position: relative;
+
+      p {
+        font-size: 1rem;
+        background-color: #2980b9;
+        padding: 2rem;
+        border-radius: 0px 10px 10px 10px;
+        color: #fff;
+        font-weight: 400;
+        text-align: left;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+
+      span {
+        font-weight: 800;
+        color: #fff;
+        position: absolute;
+        top: 16px;
+        left: 8px;
+        font-size: 15px;
+        padding: 5px;
+        border-radius: 1px;
+      }
+    }
+    .message .me {
+      margin-left: auto;
+    }
+    .mess-right {
+      margin-left: auto;
+      margin-right: 0px;
+      display: flex;
+      flex-direction: column;
+      min-width: 20%;
+      padding-right: 0.5rem;
+      position: relative;
+      p {
+        text-align: end;
+        border-radius: 10px 0px 10px 10px;
+        background-color: $redColor;
+        color: white;
+        text-align: left;
+      }
+      span {
+        text-align: end;
+        padding-left: 1rem;
+        padding-right: 0.5rem;
+      }
+    }
+  }
+
+  .send {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    input {
+      width: 80%;
+      text-decoration: none;
+      background-color: #404450;
+      border: none;
+      padding-left: 1rem;
+      border-radius: 5px 0px 0px 5px;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      width: 20%;
+      border: none;
+      background-color: $yellowColor;
+      border-radius: 0px 5px 5px 0px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
