@@ -17,6 +17,7 @@ const Weather = () => {
   const [isWeatherVisible, setWeatherVisiblity] = useState<boolean>(false);
   const [pressure, setPressure] = useState<string>('');
   const [cityName, setCityName] = useState<string>('');
+  const [icon, setIcon] = useState<string>("");
 
   const handleCity = (e: {
     target: { value: React.SetStateAction<string> };
@@ -36,6 +37,7 @@ const Weather = () => {
         setMinTemperature(res.data.main.temp_min - 273.15);
         setHumidity(res.data.main.humidity);
         setCityName(res.data.name);
+        setIcon(res.data.weather[0].icon);
         setPressure(res.data.main.pressure);
         setWindSpeed(res.data.wind.speed);
         setWeatherVisiblity(true);
@@ -82,6 +84,12 @@ const Weather = () => {
                 <>
                   <div className="align-self-center">
                     <h1>{description}</h1>
+                    <img
+                      src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+                      alt="weather-icon"
+                      style={{ width: 200, height: 200 }}
+                      className="weather-icon"
+                    />
                   </div>
                   <div className="wather-table-data">
                     <h2 className="wather-box">{staticText.weather_details}</h2>
