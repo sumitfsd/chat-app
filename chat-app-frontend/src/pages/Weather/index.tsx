@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import env from '../../utils/envVariable';
 import Header from '../../components/Header';
 import staticText from '../../constants/messages.json';
-
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
 import './assets/weather.scss';
 
 const Weather = () => {
@@ -17,13 +18,7 @@ const Weather = () => {
   const [isWeatherVisible, setWeatherVisiblity] = useState<boolean>(false);
   const [pressure, setPressure] = useState<string>('');
   const [cityName, setCityName] = useState<string>('');
-  const [icon, setIcon] = useState<string>("");
-
-  const handleCity = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setCity(e.target.value);
-  };
+  const [icon, setIcon] = useState<string>('');
 
   const getWeatherData = async (city: string) => {
     await axios({
@@ -46,6 +41,7 @@ const Weather = () => {
         alert(staticText.city_not_found);
       });
   };
+
   return (
     <>
       <Header />
@@ -70,15 +66,17 @@ const Weather = () => {
             <div className="weatherSpaceBox">
               <h1>{staticText.weather_condition}</h1>
               <div className="form">
-                <input
+                <Input
                   type="text"
                   value={city}
-                  onChange={handleCity}
+                  onChangeHandler={(value) => setCity(value)}
                   placeholder={staticText.enter_city_name}
                 />
-                <button onClick={() => getWeatherData(city)} className="btn">
-                  {staticText.search}
-                </button>
+                <Button
+                  onChangedHandler={() => getWeatherData(city)}
+                  className="btn"
+                  text={staticText.search}
+                />
               </div>
               {isWeatherVisible && (
                 <>
