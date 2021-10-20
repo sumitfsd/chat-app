@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 
 import { to_Decrypt, to_Encrypt } from '../../aes.js';
 import staticText from '../../constants/messages.json';
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
 import './assets/chat.scss';
 
 interface propsData {
@@ -73,17 +75,17 @@ const Chat = (props: propsData) => {
         <div ref={messagesEndRef} />
       </div>
       <div className="send">
-        <input
+        <Input
           placeholder={staticText.enter_your_message}
           value={text}
-          onChange={(e) => setText(e.target.value)}
-          onKeyPress={(e) => {
+          onChangeHandler={(value) => setText(value)}
+          onKeyPressHandler={(e: React.KeyboardEvent<HTMLInputElement>) => {
             if (e.key === staticText.enter) {
               sendData();
             }
           }}
         />
-        <button onClick={sendData}>{staticText.send}</button>
+        <Button onChangedHandler={sendData} text={staticText.send} />
       </div>
     </div>
   );

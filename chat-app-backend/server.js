@@ -38,7 +38,7 @@ io.on("connection", (socket) => {
     socket.broadcast.to(p_user.room).emit("message", {
       userId: p_user.id,
       username: p_user.username,
-      text: `${p_user.username} has joined the chat`,
+      text: `Welcome ${p_user.username}`,
     });
   });
 

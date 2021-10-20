@@ -3,7 +3,8 @@ import { useState } from 'react';
 import Header from '../../components/Header';
 import history from '../../utils/history';
 import staticText from '../../constants/messages.json';
-
+import { Button } from '../../components/Button';
+import { Input } from '../../components/Input';
 import './assets/home.scss';
 
 interface propsData {
@@ -35,22 +36,24 @@ const Home = (props: propsData) => {
           <div className="getway-box">
             <h1>{staticText.please_enter_user_name}</h1>
             <div className="formGroup">
-              <input
+              <Input
                 placeholder={staticText.enter_user_name}
                 value={userName}
-                onChange={(e) => setUserName(e.target.value)}
+                onChangeHandler={(value) => setUserName(value)}
               />
             </div>
             <div className="formGroup">
-              <input
+              <Input
                 placeholder={staticText.enter_room_name}
                 value={roomName}
-                onChange={(e) => setRoomName(e.target.value)}
+                onChangeHandler={(value) => setRoomName(value)}
               />
             </div>
-            <button className="btn btnSubmit" onClick={joinRoomHandler}>
-              {staticText.join_create}
-            </button>
+            <Button
+              className="btn btnSubmit"
+              onChangedHandler={joinRoomHandler}
+              text={staticText.join_create}
+            />
           </div>
         </div>
       </div>
