@@ -2,13 +2,13 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-User can chat here and chek the wheather
+User can chat and check the weather using this App
 
 ## Features
 
-- Create Room
+- Create Room and Join Room
 - Chat in group
-- Check the wheather
+- Check current weather
 
 ## Tech
 
@@ -27,11 +27,14 @@ Clone the repo
 ```sh
 cd chat-app-front-end
 npm i
-node server.js
+Create .env file on root folder in chat-app-frontend and insert below lines
+REACT_APP_WEATHER_KEY = "b3cd323b89ab55b940e9ec2862a1568b"
+REACT_APP_WEATHER_BASE_URL = "http://api.openweathermap.org"
+npm start
 ```
 
 ```sh
 cd chat-app-back-end
 npm i
-npm start
+node server.js
 ```

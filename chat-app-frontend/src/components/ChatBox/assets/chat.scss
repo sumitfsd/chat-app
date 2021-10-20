@@ -54,7 +54,7 @@
   }
   .chat-message {
     height: 70%;
-    @include scrollbars(5px, $backgroundColor, $yellowColor);
+    @include scrollbars(5px, #282b34, #ffac41);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -103,7 +103,7 @@
       p {
         text-align: end;
         border-radius: 10px 0px 10px 10px;
-        background-color: $redColor;
+        background-color: #ff1e56;
         color: white;
         text-align: left;
       }
@@ -133,7 +133,7 @@
     button {
       width: 20%;
       border: none;
-      background-color: $yellowColor;
+      background-color: #ffac41;
       border-radius: 0px 5px 5px 0px;
       &:hover {
         cursor: pointer;

@@ -1,0 +1,103 @@
+.weather-layout {
+  display: flex;
+  height: 90vh;
+}
+.weather-left {
+  flex-basis: 60%;
+  background-color: navy;
+}
+.weather-right {
+  flex-basis: 40%;
+  background-color: #2a4266;
+}
+
+.weather-data {
+  display: flex;
+}
+
+.temp {
+  font-size: 65px;
+  font-weight: 600;
+  margin-right: 15px;
+}
+
+.weather-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 130px;
+  max-width: 100%;
+  z-index: 1;
+}
+
+.city {
+  font-size: 40px;
+}
+
+.time span {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.weather-left {
+  background-image: url('./baloon.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(36, 57, 90, 0.64);
+    height: 100%;
+    width: 100%;
+    left: 0;
+  }
+}
+
+.weatherSpaceBox {
+  input[type='text'] {
+    width: 65%;
+    padding: 8px 15px;
+    height: 50px;
+    border: none;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    color: #333;
+    &:focus {
+      outline: none;
+    }
+  }
+  .btn {
+    background: #132c52;
+    padding: 15px 35px;
+    border: none;
+    height: 51px;
+    cursor: pointer;
+  }
+}
+.wather-table-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.wather-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 50px;
+}
+.supp {
+  font-size: 18px;
+  color: #fff;
+}
+
+.weather-icon {
+  width: unset !important;
+  height: unset !important;
+}

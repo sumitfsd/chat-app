@@ -9,5 +9,17 @@
   "send": "Send",
   "enter_your_message": "Enter your message",
   "enter": "Enter",
-  "join_create": "Create/Join"
+  "join_create": "Create/Join",
+  "chat_app": "Chat App",
+  "weather": "Weather",
+  "weather_condition": "Weather Condition",
+  "enter_city_name": "Enter city name",
+  "search": "Search",
+  "city_not_found": "City not found",
+  "weather_details": "Weather details",
+  "pressure": "Pressure",
+  "wind_speed": "Wind Speed",
+  "minimum_temperature": "Minimum Temperature",
+  "maximum_temperature": "Maximum Temperature",
+  "humidity": "Humidity"
 }

@@ -1,4 +1,4 @@
-import Routes from './pages/routes';
+import Routes from './routes';
 import './App.scss';
 
 const App = () => {
